@@ -7,7 +7,7 @@ class Solution {
         int unique=1;
 
         for(int i=0,j=1;j<nums.length;){
-            if (nums[j]==nums[j-1]){
+            if (nums[j]==nums[i]){
                 j++;
                 continue;
             }
