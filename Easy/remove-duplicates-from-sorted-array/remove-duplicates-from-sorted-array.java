@@ -1,9 +1,21 @@
-int[] nums = [...]; // Input array
-int[] expectedNums = [...]; // The expected answer with correct length
+class Solution {
+    public int removeDuplicates(int[] nums) {
 
-int k = removeDuplicates(nums); // Calls your implementation
+        if(nums.length==0)
+            return 0;
 
-assert k == expectedNums.length;
-for (int i = 0; i < k; i++) {
-    assert nums[i] == expectedNums[i];
+        int unique=1;
+
+        for(int i=0,j=1;j<nums.length;){
+            if (nums[j]==nums[j-1]){
+                j++;
+                continue;
+            }
+            nums[i+1]=nums[j];
+            unique++;
+            i++;
+            j++;
+        }
+        return unique;
+    }
 }
